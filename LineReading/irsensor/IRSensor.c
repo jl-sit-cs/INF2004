@@ -1,55 +1,48 @@
 #include <stdio.h>
 #include "pico/stdlib.h"
-#include "hardware/adc.h"
+#include "hardware/gpio.h"
 #include "hardware/timer.h"
 
-#define IR_SENSOR_PIN 26  // ADC pin connected to IR sensor's analog output
+#define LINE_SENSOR_PIN 26  // GPIO 26 connected to the line sensor's digital output
 
 volatile uint64_t start_time, end_time;
 volatile bool measuring = false;
 
 void setup() {
     stdio_init_all();
-    
-    // Initialize ADC
-    adc_init();
-    adc_gpio_init(IR_SENSOR_PIN);  // Initialize the GPIO for ADC
-    adc_select_input(0);           // ADC channel 0 (pin 26)
+    gpio_init(LINE_SENSOR_PIN);
+    gpio_set_dir(LINE_SENSOR_PIN, GPIO_IN); // Set the pin as input
 }
 
 void loop() {
-    uint16_t adc_value = adc_read();
-    
-    if (adc_value < 1000) {
-        //Assuming the high of the PWM will be the black surface
-        if (measuring) {
-            end_time = time_us_64();    
-            uint64_t pulse_width = end_time - start_time; //This is the time that the pulse is high
-            //Not sure if that is what they want
-            printf("Pulse Width (HIGH): %.6f second\n", pulse_width / 1000000.0);
-            measuring = false;
-        }
-        printf("White Surface Detected (Analog)\n");
+    bool sensor_state = gpio_get(LINE_SENSOR_PIN); // Read digital state of the sensor
 
+    if (sensor_state) { // HIGH state (black line detected)
+        if (!measuring) {
+            start_time = time_us_64(); // Start the timer
+            measuring = true; // Indicate that measuring has started
+        }
+        printf("Black Line Detected (Digital)\n");
         
-    } else if (adc_value > 2000) {
-        //Start timer for high pulse?W
-           if (!measuring) {
-            start_time = time_us_64();  
-            measuring = true;
+    } else { // LOW state (white line detected)
+        if (measuring) {
+            end_time = time_us_64(); // Stop the timer
+            uint64_t pulse_width = end_time - start_time; // Calculate pulse width (assuming it is the time)
+            printf("Pulse Width (HIGH): %.6f seconds\n", pulse_width / 1000000.0);
+            measuring = false; // Indicate that measuring has stopped
         }
-
-        printf("Black Surface Detected (Analog)\n");
-
+        printf("White Line Detected (Digital)\n");
     }
-    //The detection is every one second
-    sleep_ms(1000);  
+
+    sleep_ms(100); 
 }
 
-int main() {
+int main() 
+{
     setup();
     while (1) {
         loop();
     }
     return 0;
 }
+
