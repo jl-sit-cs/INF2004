@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.12)
 
 
 # Pull in SDK (must be before project)
-# set(CMAKE_C_COMPILER "")
-# set(CMAKE_CXX_COMPILER "")
-# use this only when you need to use ARM GNU toolchain to build
+set(CMAKE_C_COMPILER "C:/Users/santa/Desktop/SIT/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-gcc.exe")
+set(CMAKE_CXX_COMPILER "C:/Users/santa/Desktop/SIT/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-g++.exe")
+
 include(pico_sdk_import.cmake)
 
 include(pico_extras_import_optional.cmake)
