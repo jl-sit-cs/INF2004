@@ -1,0 +1,150 @@
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/tmp/picotool-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -P C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/tmp/picotool-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-UPDATE.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps\picotool-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -P C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/tmp/picotool-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps\picotool-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps\picotool-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps\picotool-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\CF0F3C234C30FF93FBA75F62BC934D13\PICOTOOL-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\santa\Desktop\SIT\INF2004\INF2004\_deps\picotool-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\808EDE1F89570E77ECE87E22B8CC8579\PICOTOOL-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/CMakeFiles/Debug/picotool-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/picotool-populate-prefix/src/picotool-populate-stamp/Debug/picotool-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKEFILES\59F004055D3423811CC05992304BDD95\PICOTOOL-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\SANTA\DESKTOP\SIT\INF2004\INF2004\_DEPS\PICOTOOL-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild -BC:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild --check-stamp-file C:/Users/santa/Desktop/SIT/INF2004/INF2004/_deps/picotool-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

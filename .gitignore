@@ -1,1 +1,10 @@
 build
+*.vcxproj.*
+cmake_install.cmake
+*.vcxproj
+generated
+*.stamp
+*.stamp.depend
+.vscode
+CMakeFiles
+_deps

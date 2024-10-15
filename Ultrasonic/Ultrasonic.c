@@ -97,11 +97,6 @@ int main()
 
     while (1)
     {
-        uint64_t cm = getCm();
-        
-        printf("Distance: %llu cm\n", cm);
-
-        sleep_ms(1000); // Delay 1 second between measurements
     }
 
     return 0;

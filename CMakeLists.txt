@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.12)
 
+
 # Pull in SDK (must be before project)
+# set(CMAKE_C_COMPILER "")
+# set(CMAKE_CXX_COMPILER "")
+# use this only when you need to use ARM GNU toolchain to build
 include(pico_sdk_import.cmake)
 
 include(pico_extras_import_optional.cmake)
@@ -16,7 +20,6 @@ if (PICO_SDK_VERSION_STRING VERSION_LESS "1.3.0")
 endif()
 
 set(PICO_EXAMPLES_PATH ${PROJECT_SOURCE_DIR})
-
 # Initialize the SDK
 pico_sdk_init()
 
@@ -35,4 +38,5 @@ add_subdirectory(Ultrasonic)
 add_subdirectory(cmake)
 add_subdirectory(LineReading)
 add_subdirectory(WiFi)
+
 
