@@ -6,6 +6,7 @@ add_executable(Ultrasonic
 # Link with libraries for standard functionality
 target_link_libraries(Ultrasonic
     pico_stdlib              # Core standard library
+    hardware_adc
 )
 
 # Create map/bin/hex files, etc.

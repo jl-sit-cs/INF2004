@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 # Pull in SDK (must be before project)
 set(CMAKE_C_COMPILER "C:/Users/santa/Desktop/SIT/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-gcc.exe")
 set(CMAKE_CXX_COMPILER "C:/Users/santa/Desktop/SIT/arm-gnu-toolchain-13.3.rel1-mingw-w64-i686-arm-none-eabi/bin/arm-none-eabi-g++.exe")
+set(CMAKE_BUILD_TYPE Debug)
 
 include(pico_sdk_import.cmake)
 
@@ -37,6 +38,5 @@ endif()
 add_subdirectory(Ultrasonic)
 add_subdirectory(cmake)
 add_subdirectory(LineReading)
-add_subdirectory(WiFi)
-
+# add_subdirectory(WiFi)
 
