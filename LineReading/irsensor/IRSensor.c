@@ -6,7 +6,7 @@
 
 #define LINE_SENSOR_PIN 26  // GPIO 26 connected to the line sensor's digital output
 #define NUM_SAMPLES 10       // Number of samples for averaging
-#define THRESHOLD 400         // Threshold for ADC readings
+#define THRESHOLD 1500         // Threshold for ADC readings
 
 volatile uint64_t black_start_time, black_end_time, white_start_time, white_end_time;
 volatile bool measuring_black = false;
@@ -59,13 +59,15 @@ void loop() {
 
     //Used for testing
     //printf("Filtered Analog Value: %d\n", filtered_value); // Print the filtered value
+    //printf("Analog Value: %d\n", analog_value); // Print the Analog value
+
 
     if (filtered_value > THRESHOLD) { // ADC > 400  (black line detected)
         if (!measuring_black) {
             black_start_time = time_us_64(); // Start the timer for black line
             measuring_black = true; // Indicate that measuring has started for black line
+            printf("Black Line Detected\n");
         }
-        printf("Black Line Detected\n");
 
         // If we are measuring a white surface, calculate the pulse width
         if (measuring_white) {
@@ -89,11 +91,12 @@ void loop() {
         if (!measuring_white) {
             white_start_time = time_us_64(); // Start the timer for white surface
             measuring_white = true; // Indicate that measuring has started for white surface
+            printf("White Line Detected\n");
         }
-        printf("White Line Detected\n");
+       
     }
 
-    sleep_ms(100); 
+    sleep_ms(20); 
 }
 
 int main() 
@@ -104,3 +107,4 @@ int main()
     }
     return 0;
 }
+
